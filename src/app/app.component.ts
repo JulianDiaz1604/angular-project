@@ -6,5 +6,42 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-project';
+  name = 'Julian';
+  age = 20;
+  img = 'https://www.w3schools.com/howto/img_avatar.png';
+  btnDisable = true;
+  person = {
+    name: 'Julian',
+    age: 20,
+    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
+  }
+  names: string[] = ['Nico', 'Juli', 'Santi'];
+  newName = "";
+
+  toggleButton(){
+    this.btnDisable = !this.btnDisable;
+  }
+
+  increaseAge(){
+    this.person.age ++;
+  }
+
+  onScroll(event: Event){
+    const element = event.target as HTMLElement;
+    console.log(element.scrollTop)
+  }
+
+  changeName(event: Event){
+    const element = event.target as HTMLInputElement;
+    this.person.name = element.value;
+  }
+
+  addName(){
+    this.names.push(this.newName);
+    this.newName = "";
+  }
+
+  deleteName(index: number){
+    this.names.splice(index, 1);
+  }
 }
