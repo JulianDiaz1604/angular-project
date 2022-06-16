@@ -4,3 +4,51 @@
   overflow: auto;
   background: red;
 }
+.phones--grid {
+ display: flex;
+  flex-direction: column;
+  div {
+    img {
+      width: 170px;
+      height: 200px;
+      border-radius: 10px;
+    }
+  }
+  h2, p {
+    margin: 0;
+  }
+}
+
+.message-error {
+  background: darkgray;
+  color: white;
+  opacity: 0;
+  transition: all linear .5s;
+  &.invalid {
+    opacity: 1;
+  }
+}
+
+.styles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.line-error {
+  height: 0;
+  border-bottom: 1px solid;
+  &.invalid {
+    border-color: red;
+  }
+  &.valid {
+    border-color: green;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .phones--grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  }
+}
